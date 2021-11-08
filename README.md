@@ -13,7 +13,7 @@ a flask web-based interface.
 #Attributions 
 
 This is one of the final projects for the Udacity intermediate python nanodegree, completed 11/2021.
-Udacity contributed basic project proposal, the raw data files, and two incomplete starter code module files, one
+Udacity contributed basic project proposal, the raw data files, web interface HTML files, and two incomplete starter code module files, one
 for each of the user interfaces (command line, web).
 
 All other parts of the project, including the adaptable engine for importing texts, and the image manipulation engine,
@@ -91,7 +91,19 @@ When a path image is supplied and the meme is generated, the output is in .\tmp 
 the meme file name the original file name modified by the prefix 'meme_'.
 
 ##Web Interface
-This is currently being written and will be added shortly.
+Run the app.py module. It should output a web link to an intuitive interactive web server that allows you
+to either generate a random meme from a preexisting library or input your own image path and 
+quote for a meme.
+
+The output looks like:
+```
+ * Serving Flask app 'app' (lazy loading)
+ * Environment: production
+   WARNING: This is a development server. Do not use it in a production deployment.
+   Use a production WSGI server instead.
+ * Debug mode: off
+ * Running on http://127.0.0.1:5000/ (Press CTRL+C to quit)
+```
 
 # Description and Customization of Modules
 

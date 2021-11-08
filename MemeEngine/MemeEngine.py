@@ -62,8 +62,8 @@ class MemeEngine:
         with Image.open(img) as meme:
             # resize image
             old_width, old_height = meme.size
-            scale = self.meme_width//old_width
-            new_size = new_width, new_height = self.meme_width, scale*old_height
+            scale = self.meme_width/old_width
+            new_size = new_width, new_height = self.meme_width, int(scale*old_height)
             meme = meme.resize(new_size)
 
             # caption image to a random location on the left half of the image, depending on font size
