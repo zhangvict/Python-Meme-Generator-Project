@@ -30,12 +30,13 @@ def setup():
 
     for file in os.listdir(images_path):
         if file.endswith('.jpg'):
-            imgs.append(os.path.join(images_path,file))
+            imgs.append(os.path.join(images_path, file))
 
     return quotes, imgs
 
 
 quotes, imgs = setup()
+
 
 @app.route('/')
 def meme_rand():
@@ -45,10 +46,12 @@ def meme_rand():
     path = meme.make_meme(img, quote.body, quote.author)
     return render_template('meme.html', path=path)
 
+
 @app.route('/create', methods=['GET'])
 def meme_form():
     """User input for meme information."""
     return render_template('meme_form.html')
+
 
 @app.route('/create', methods=['POST'])
 def meme_post():
@@ -60,7 +63,7 @@ def meme_post():
         open_file.write(req.content)
         body = request.form["body"]
         author = request.form["author"]
-        path = meme.make_meme(tmp,body,author)
+        path = meme.make_meme(tmp, body, author)
     os.remove(tmp)
     return render_template('meme.html', path=path)
 
