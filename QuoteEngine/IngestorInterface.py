@@ -5,6 +5,7 @@ Child classes will be ingestor classes for specific file types.
 
 from abc import ABC, abstractmethod
 from .QuoteModel import QuoteModel
+from typing import List
 
 
 class IngestorInterface(ABC):
@@ -20,6 +21,6 @@ class IngestorInterface(ABC):
 
     @classmethod
     @abstractmethod
-    def parse(cls, path: str) -> list[QuoteModel]:
+    def parse(cls, path: str) -> List[QuoteModel]:
         """Ingest the file in path and returns a list of QuoteModels of ingested Quotes."""
         pass

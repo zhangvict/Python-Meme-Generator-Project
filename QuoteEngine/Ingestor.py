@@ -23,6 +23,3 @@ class Ingestor(IngestorInterface):
         for ing in cls.ingestors:
             if ing.can_ingest(path):
                 return ing.parse(path)
-
-
-

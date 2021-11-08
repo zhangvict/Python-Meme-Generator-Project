@@ -59,13 +59,16 @@ def meme_post():
     img_url = request.form["image_url"]
     tmp = f'./tmp/random_{random.randint(0, 10000)}.jpg'
     req = requests.get(img_url)
-    with open(tmp, 'wb') as open_file:
-        open_file.write(req.content)
-        body = request.form["body"]
-        author = request.form["author"]
-        path = meme.make_meme(tmp, body, author)
-    os.remove(tmp)
-    return render_template('meme.html', path=path)
+    try:
+        with open(tmp, 'wb') as open_file:
+            open_file.write(req.content)
+            body = request.form["body"]
+            author = request.form["author"]
+            path = meme.make_meme(tmp, body, author)
+        os.remove(tmp)
+        return render_template('meme.html', path=path)
+    except:
+        return render_template('error.html')
 
 
 if __name__ == "__main__":
