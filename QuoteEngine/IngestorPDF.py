@@ -29,7 +29,7 @@ class IngestorPDF(IngestorInterface):
         tmp_code = ''.join([str(random.randint(0, 9)) for _ in range(5)])
         tmp_file = f"temp_file_{tmp_code}.txt"
 
-        subprocess.run(['pdftotext', path, tmp_file])
+        subprocess.run(['pdftotext', path, tmp_file], shell=True, check=True)
 
         quotes = IngestorTXT.parse(tmp_file)
 

@@ -19,7 +19,7 @@ def setup():
     """Load all resources."""
     quote_files = ['./_data/DogQuotes/DogQuotesTXT.txt',
                    './_data/DogQuotes/DogQuotesDOCX.docx',
-                   './_data/DogQuotes/DogQuotesPDF.pdf',
+                   #'./_data/DogQuotes/DogQuotesPDF.pdf',
                    './_data/DogQuotes/DogQuotesCSV.csv']
     quotes = []
     for f in quote_files:
@@ -57,12 +57,12 @@ def meme_form():
 def meme_post():
     """Create a user defined meme."""
     img_url = request.form["image_url"]
-    tmp = f'./tmp/random_{random.randint(0, 10000)}.jpg'
     req = requests.get(img_url)
     try:
         with open(tmp, 'wb') as open_file:
             open_file.write(req.content)
             body = request.form["body"]
+            tmp = f'./tmp/random_{random.randint(0, 10000)}.jpg'
             author = request.form["author"]
             path = meme.make_meme(tmp, body, author)
         os.remove(tmp)
