@@ -22,7 +22,7 @@ class MemeEngine:
 
     # supported_file_types={'jpg','png'}
     meme_width = 500  # set the width of the meme
-    meme_font = 'calibri'  # truetype font of the meme
+    meme_font = './LilitaOne-Regular.ttf'  # truetype font of the meme
     meme_fill = 'white'  # fill color for meme text
     meme_factor = 18  # how much smaller the font size is relative to width
 

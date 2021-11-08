@@ -13,7 +13,7 @@ class IngestorDOCX(IngestorInterface):
     supported_formats = {'docx'}
 
     @classmethod
-    def parse(cls, path: str) -> list[QuoteModel]:
+    def parse(cls, path: str):
         """Ingest the file in path and returns a list of QuoteModels of ingested Quotes."""
         if not cls.can_ingest(path):
             raise Exception(f'unsupported file format: requires{cls.supported_formats}')

@@ -16,7 +16,7 @@ class IngestorPDF(IngestorInterface):
     supported_formats = {'pdf'}
 
     @classmethod
-    def parse(cls, path: str) -> list[QuoteModel]:
+    def parse(cls, path: str):
         """Ingest the file in path and returns a list of QuoteModels of ingested Quotes.
 
         Use a subprocess to call pdftotext to convert the pdf to a random temp text file.
