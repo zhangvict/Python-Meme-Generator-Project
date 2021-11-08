@@ -65,7 +65,7 @@ def meme_post():
             tmp = f'./tmp/random_{random.randint(0, 10000)}.jpg'
             author = request.form["author"]
             path = meme.make_meme(tmp, body, author)
-        os.remove(tmp)
+            os.remove(tmp)
         return render_template('meme.html', path=path)
     except:
         return render_template('error.html')
